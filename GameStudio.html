@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Studio</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      background: #111;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #0ff;
+      border-bottom: 2px solid #0ff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      padding: 1rem;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      position: relative;
+    }
+
+    nav ul li {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    nav ul li:hover {
+      transform: scale(1.1);
+      color: #0ff;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: #0ff;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #0ff;
+    }
+
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #0ff;
+      border-radius: 50%;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) translateX(10vw);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      border-top: 2px solid #0ff;
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #0ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .video-section {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .video-section h2 {
+      color: #0ff;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 0.75rem 1.25rem;
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .top-button:hover {
+      background-color: #00caca;
+    }
+  </style>
+</head>
+<body>
+  <header>Game Studio</header>
+
+  <nav>
+    <ul>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#publisher">Publisher</a></li>
+      <li><a href="#release">Release Date</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#console">Console</a></li>
+      <li><a href="#videos">Videos</a></li>
+    </ul>
+    <div class="particles" id="particles"></div>
+  </nav>
+
+  <section id="story">
+    <h2>Story</h2>
+    <p><strong>Wuthering Waves:</strong> In a post-apocalyptic world, humanity strives to rebuild after a catastrophic event called the "Lament." You play as Rover, awakening without memories, exploring a dynamic open world filled with mysteries, monsters, and ancient secrets.</p>
+    <p><strong>Black Myth: Wukong:</strong> Inspired by the Chinese epic "Journey to the West," you play as the Destined One, a monkey warrior fighting through legendary foes and discovering ancient lore. The game offers a rich mythology-based narrative full of action and magic.</p>
+  </section>
+
+  <section id="publisher">
+    <h2>Publisher</h2>
+    <p><strong>Wuthering Waves:</strong> Kuro Game</p>
+    <p><strong>Black Myth: Wukong:</strong> Game Science</p>
+  </section>
+
+  <section id="release">
+    <h2>Release Date</h2>
+    <p><strong>Wuthering Waves:</strong> May 22, 2024</p>
+    <p><strong>Black Myth: Wukong:</strong> August 20, 2024</p>
+  </section>
+
+  <section id="characters">
+    <h2>Characters</h2>
+    <p><strong>Wuthering Waves:</strong>
+      <a href="https://www.google.com/search?q=Rover+Wuthering+Waves" target="_blank">Rover</a>,
+      <a href="https://www.google.com/search?q=Yangyang+Wuthering+Waves" target="_blank">Yangyang</a>,
+      <a href="https://www.google.com/search?q=Chixia+Wuthering+Waves" target="_blank">Chixia</a>,
+      <a href="https://www.google.com/search?q=Baizhi+Wuthering+Waves" target="_blank">Baizhi</a>,
+      <a href="https://www.google.com/search?q=Calcharo+Wuthering+Waves" target="_blank">Calcharo</a>,
+      <a href="https://www.google.com/search?q=Encore+Wuthering+Waves" target="_blank">Encore</a>
+    </p>
+    <p><strong>Black Myth: Wukong:</strong>
+      <a href="https://www.google.com/search?q=Wukong+Black+Myth" target="_blank">The Destined One (Wukong)</a>,
+      <a href="https://www.google.com/search?q=Baihu+Black+Myth" target="_blank">Baihu</a>,
+      <a href="https://www.google.com/search?q=Fire+Lord+Black+Myth" target="_blank">Fire Lord</a>,
+      <a href="https://www.google.com/search?q=Black+Myth+Wukong+Mythical+Creatures" target="_blank">other mythical creatures</a>
+    </p>
+  </section>
+
+  <section id="console">
+    <h2>Console</h2>
+    <p><strong>Wuthering Waves:</strong> PC, Android, iOS (Planned for PlayStation)</p>
+    <p><strong>Black Myth: Wukong:</strong> PC, PlayStation 5, Xbox Series X/S</p>
+  </section>
+
+  <section id="videos" class="video-section">
+    <h2>Videos</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/R8htow_6tRc" title="Wuthering Waves Trailer" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/u83VdXAVq08" title="Black Myth: Wukong Trailer" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Game Studio | All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
+  </footer>
+
+  <button class="top-button" onclick="scrollToTop()">Top</button>
+
+  <script>
+    const particles = document.getElementById('particles');
+    for (let i = 0; i < 100; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = `${Math.random() * 100}vw`;
+      p.style.top = `${Math.random() * 100}vh`;
+      p.style.animationDuration = `${3 + Math.random() * 5}s`;
+      particles.appendChild(p);
+    }
+
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
